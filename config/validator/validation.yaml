@@ -1,0 +1,80 @@
+App\Entity\Location:
+    properties:
+        Name:
+            - NotBlank:
+                  message: 'City name cannot be empty.'
+                  groups: [new, edit]
+            - Length:
+                  min: 1
+                  max: 255
+                  minMessage: 'City name must contain at least 1 characters.'
+                  groups: [new, edit]
+
+        Latitude:
+            - NotBlank:
+                  message: 'Latitude cannot be empty.'
+                  groups: [new, edit]
+            - Range:
+                  min: -90
+                  max: 90
+                  notInRangeMessage: 'Latitude must be between -90 and 90.'
+                  groups: [new, edit]
+
+        Longtitude:
+            - NotBlank:
+                  message: 'Longitude cannot be empty.'
+                  groups: [new, edit]
+            - Range:
+                  min: -180
+                  max: 180
+                  notInRangeMessage: 'Longitude must be between -180 and 180.'
+                  groups: [new, edit]
+
+
+App\Entity\Measurement:
+    properties:
+        Date:
+            - NotBlank:
+                  message: 'Date cannot be empty.'
+                  groups: [new, edit]
+
+        Temperature:
+            - NotBlank:
+                  message: 'Temperature cannot be empty.'
+                  groups: [new, edit]
+            - Range:
+                  min: -100
+                  max: 100
+                  notInRangeMessage: 'Temperature must be between -100 and 100.'
+                  groups: [new, edit]
+
+        Percipation:
+            - NotBlank:
+                  message: 'Precipitation cannot be empty.'
+                  groups: [new, edit]
+            - Range:
+                  min: 0
+                  max: 1000
+                  notInRangeMessage: 'Precipitation must be between 0 and 1000.'
+                  groups: [new, edit]
+
+        Pressure:
+            - NotBlank:
+                  message: 'Pressure cannot be empty.'
+                  groups: [new, edit]
+            - Range:
+                  min: 800
+                  max: 1200
+                  notInRangeMessage: 'Pressure must be between 800 and 1200.'
+                  groups: [new, edit]
+
+        Cloudiness:
+            - NotBlank:
+                  message: 'Cloudiness cannot be empty.'
+                  groups: [new, edit]
+            - Range:
+                  min: 0
+                  max: 100
+                  notInRangeMessage: 'Cloudiness must be between 0 and 100.'
+                  groups: [new, edit]
+
